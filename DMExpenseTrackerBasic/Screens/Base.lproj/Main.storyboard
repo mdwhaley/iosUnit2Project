@@ -70,13 +70,13 @@
         <!--Expenses View Controller-->
         <scene sceneID="NRc-80-wiv">
             <objects>
-                <viewController id="mkZ-V6-dwY" customClass="ExpensesViewController" customModule="DMExpenseTrackerBasic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExpensesStoryboard" id="mkZ-V6-dwY" customClass="ExpensesViewController" customModule="DMExpenseTrackerBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gQl-vo-hJ7">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WTF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcC-h6-GnH">
-                                <rect key="frame" x="177.33333333333334" y="29" width="35.666666666666657" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcC-h6-GnH">
+                                <rect key="frame" x="174.33333333333334" y="29" width="41.333333333333343" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="3Op-La-bhJ"/>
                                 </constraints>
@@ -88,7 +88,7 @@
                                 <rect key="frame" x="0.0" y="64" width="390" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpenseCell" id="0GZ-Lg-wtM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpenseCell" id="0GZ-Lg-wtM" customClass="ExpenseCell" customModule="DMExpenseTrackerBasic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0GZ-Lg-wtM" id="ydJ-eK-1RP">
@@ -96,13 +96,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpb-vq-Bnh">
-                                                    <rect key="frame" x="20" y="11.333333333333336" width="42" height="21"/>
+                                                    <rect key="frame" x="20.000000000000004" y="9.3333333333333357" width="41.333333333333343" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="eX5-TA-YqP"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiG-H6-dSj">
-                                                    <rect key="frame" x="328" y="11.333333333333336" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiG-H6-dSj">
+                                                    <rect key="frame" x="71.333333333333343" y="9.3333333333333357" width="298.66666666666663" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="EhU-tm-irR"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -112,12 +118,14 @@
                                                 <constraint firstItem="mpb-vq-Bnh" firstAttribute="centerY" secondItem="ydJ-eK-1RP" secondAttribute="centerY" id="3Kv-lS-aqZ"/>
                                                 <constraint firstItem="kiG-H6-dSj" firstAttribute="trailing" secondItem="ydJ-eK-1RP" secondAttribute="trailingMargin" id="4ip-PO-8cO"/>
                                                 <constraint firstItem="kiG-H6-dSj" firstAttribute="centerY" secondItem="ydJ-eK-1RP" secondAttribute="centerY" id="HEJ-QC-K3G"/>
-                                                <constraint firstItem="mpb-vq-Bnh" firstAttribute="leading" secondItem="ydJ-eK-1RP" secondAttribute="leadingMargin" id="RLt-iL-8mb"/>
-                                                <constraint firstItem="kiG-H6-dSj" firstAttribute="leading" secondItem="mpb-vq-Bnh" secondAttribute="trailing" constant="266" id="W4z-it-sqz"/>
-                                                <constraint firstItem="kiG-H6-dSj" firstAttribute="trailing" secondItem="ydJ-eK-1RP" secondAttribute="trailingMargin" id="WvN-0r-PdN"/>
-                                                <constraint firstItem="mpb-vq-Bnh" firstAttribute="leading" secondItem="ydJ-eK-1RP" secondAttribute="leadingMargin" id="qBS-3P-Oga"/>
+                                                <constraint firstItem="kiG-H6-dSj" firstAttribute="leading" secondItem="mpb-vq-Bnh" secondAttribute="trailing" constant="10" id="a8G-Ai-aQ5"/>
+                                                <constraint firstItem="mpb-vq-Bnh" firstAttribute="leading" secondItem="ydJ-eK-1RP" secondAttribute="leadingMargin" id="sLF-dI-9Mn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="kiG-H6-dSj" id="v6C-OP-r8h"/>
+                                            <outlet property="titleLabel" destination="mpb-vq-Bnh" id="EWJ-GV-eVz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -140,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPM-jF-0Zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="28"/>
+            <point key="canvasLocation" x="453.84615384615381" y="27.72511848341232"/>
         </scene>
     </scenes>
     <resources>

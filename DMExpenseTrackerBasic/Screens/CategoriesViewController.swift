@@ -75,11 +75,13 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(expensesByCategory[categories[indexPath.row]]!)
-        let secondVC = ExpensesViewController()
-        secondVC.categoryText = categories[indexPath.row]
-        self.present(secondVC, animated: true)
-        print(secondVC.categoryText)
-        
+        guard let secondVC = storyboard?.instantiateViewController(withIdentifier: Constants.expensesStoryboardID) as? ExpensesViewController else {
+            fatalError("Failed to load EditUserViewController from storyboard.")
+        }
+        let category = categories[indexPath.row]
+        secondVC.categoryText = category
+        secondVC.expenseArray = expensesByCategory[category]!
+        navigationController?.pushViewController(secondVC, animated: true)
     }
 }
 
